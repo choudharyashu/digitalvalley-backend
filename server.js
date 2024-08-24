@@ -16,6 +16,8 @@ app.use(cors(
 ));
 app.use(express.json({ extended: false }));
 
+app.get("/", (req, res) => {res.send("Express on Vercel");});
+
 // Define routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api', crudRoutes);
