@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://notifications:Ashu%406802@digitalvalley.tbsox.mongodb.net/DigitalValley?retryWrites=true&w=majority&appName=DigitalValley",
+    "jwtSecret": "1ich4YrVk72vI4imUHyp9wFcTuVPZWrR"
+  }
+  

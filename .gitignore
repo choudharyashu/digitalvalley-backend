@@ -1,0 +1,4 @@
+
+# dependencies
+/my-backend/node_modules
+/mongodb-setup/node_modules
