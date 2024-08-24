@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
@@ -9,19 +8,16 @@ const app = express();
 connectDB();
 
 // Middleware to parse JSON bodies
-app.use(cors(
-    {
-        origin: ['https://ticket.techvein.in/']
-    }
-));
+app.use(cors({
+    origin: ['https://ticket.techvein.in/']
+}));
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => {res.send("Express on Vercel");});
+app.get("/", (req, res) => { res.send("Express on Vercel"); });
 
 // Define routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api', crudRoutes);
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// Export the Express app instead of listening on a port
+module.exports = app;
