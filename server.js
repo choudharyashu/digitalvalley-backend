@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./config/db');
+const connectDB = require('./db');
 const cors = require('cors');
 const crudRoutes = require('./crud');
 require('dotenv').config();
@@ -11,6 +11,8 @@ connectDB();
 app.use(cors({
     origin: ['https://ticket.techvein.in/']
 }));
+
+// app.use(cors());
 app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => { res.send("Express on Vercel"); });
