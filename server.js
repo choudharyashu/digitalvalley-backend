@@ -9,7 +9,11 @@ const app = express();
 connectDB();
 
 // Middleware to parse JSON bodies
-app.use(cors());
+app.use(cors(
+    {
+        origin: ['https://ticket.techvein.in/']
+    }
+));
 app.use(express.json({ extended: false }));
 
 // Define routes
